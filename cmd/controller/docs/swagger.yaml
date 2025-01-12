@@ -1,0 +1,2046 @@
+basePath: /
+definitions:
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.AddSsoConfigRequest:
+    properties:
+      clientID:
+        type: string
+      clientSecret:
+        type: string
+      domain:
+        type: string
+      platform:
+        type: string
+      provider:
+        type: string
+    required:
+    - clientID
+    - clientSecret
+    - domain
+    - platform
+    - provider
+    type: object
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.Client:
+    properties:
+      allocatedIP:
+        type: string
+      allowedIPs:
+        type: string
+      clientPrivateKey:
+        type: string
+      clientPublicKey:
+        type: string
+      createdAt:
+        type: string
+      deletedAt:
+        $ref: '#/definitions/gorm.DeletedAt'
+      dnsServer:
+        type: string
+      expiryTime:
+        type: string
+      id:
+        type: integer
+      is_active:
+        type: boolean
+      preshared_key:
+        type: string
+      updatedAt:
+        type: string
+      user:
+        $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.User'
+      userId:
+        type: integer
+      uuid:
+        type: string
+      vpnGateway:
+        $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGateway'
+      vpnGatewayId:
+        type: integer
+    type: object
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.GatewayUpdateGroupRequest:
+    properties:
+      groupUuids:
+        items:
+          type: string
+        type: array
+    required:
+    - groupUuids
+    type: object
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.Group:
+    properties:
+      createdAt:
+        type: string
+      deletedAt:
+        $ref: '#/definitions/gorm.DeletedAt'
+      id:
+        type: integer
+      name:
+        type: string
+      updatedAt:
+        type: string
+      users:
+        items:
+          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.User'
+        type: array
+      uuid:
+        type: string
+      vpnGateways:
+        items:
+          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGateway'
+        type: array
+    type: object
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.GroupCreateRequest:
+    properties:
+      name:
+        type: string
+    required:
+    - name
+    type: object
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.GroupUpdateRequest:
+    properties:
+      name:
+        type: string
+    required:
+    - name
+    type: object
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.GroupUpdateUserRequest:
+    properties:
+      userUuids:
+        items:
+          type: string
+        type: array
+    required:
+    - userUuids
+    type: object
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.IPPool:
+    properties:
+      assigned:
+        type: boolean
+      createdAt:
+        type: string
+      deletedAt:
+        $ref: '#/definitions/gorm.DeletedAt'
+      id:
+        type: integer
+      ip:
+        type: string
+      updatedAt:
+        type: string
+      uuid:
+        type: string
+      vpngatewayID:
+        description: Foreign key to VpnGateway
+        type: integer
+    type: object
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.RegisterUserRequest:
+    properties:
+      email:
+        type: string
+      isPasswordSet:
+        type: boolean
+      password:
+        type: string
+      role:
+        $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UserRoleEnum'
+    required:
+    - email
+    - role
+    type: object
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UpdateAllowPasswordLoginRequest:
+    properties:
+      allowPasswordLogin:
+        type: boolean
+    required:
+    - allowPasswordLogin
+    type: object
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UpdateAllowSSOLoginRequest:
+    properties:
+      allowSsoLogin:
+        type: boolean
+    required:
+    - allowSsoLogin
+    type: object
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UpdateUserRequest:
+    properties:
+      email:
+        type: string
+      newPassword:
+        type: string
+      role:
+        $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UserRoleEnum'
+    type: object
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.User:
+    properties:
+      clients:
+        items:
+          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.Client'
+        type: array
+      createdAt:
+        type: string
+      deletedAt:
+        $ref: '#/definitions/gorm.DeletedAt'
+      email:
+        type: string
+      groups:
+        items:
+          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.Group'
+        type: array
+      id:
+        type: integer
+      isPasswordSet:
+        type: boolean
+      name:
+        type: string
+      role:
+        $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UserRoleEnum'
+      updatedAt:
+        type: string
+      uuid:
+        type: string
+      vpnGateways:
+        items:
+          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGateway'
+        type: array
+    type: object
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UserLoginRequest:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    required:
+    - email
+    - password
+    type: object
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UserRoleEnum:
+    enum:
+    - Default
+    - Admin
+    - User
+    type: string
+    x-enum-varnames:
+    - DefaultRole
+    - AdminRole
+    - UserRole
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGateway:
+    properties:
+      clients:
+        items:
+          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.Client'
+        type: array
+      createdAt:
+        type: string
+      deletedAt:
+        $ref: '#/definitions/gorm.DeletedAt'
+      dnsServer:
+        type: string
+      domain:
+        type: string
+      groups:
+        items:
+          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.Group'
+        type: array
+      id:
+        type: integer
+      ipAddressCIDR:
+        type: string
+      ipPool:
+        description: IPAllocations    []*IPAllocation `json:"ipAllocations"`
+        items:
+          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.IPPool'
+        type: array
+      jwtAlgorithm:
+        type: string
+      jwtSecretKey:
+        type: string
+      name:
+        type: string
+      port:
+        type: integer
+      serverPrivateKey:
+        type: string
+      serverPublicKey:
+        type: string
+      updatedAt:
+        type: string
+      users:
+        items:
+          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.User'
+        type: array
+      uuid:
+        type: string
+      vpnCIDR:
+        type: string
+    type: object
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayCreateRequest:
+    properties:
+      dnsServer:
+        type: string
+      domain:
+        type: string
+      ipAddress:
+        type: string
+      name:
+        type: string
+      port:
+        type: integer
+      vpnCIDR:
+        type: string
+    required:
+    - dnsServer
+    - domain
+    - ipAddress
+    - name
+    - port
+    type: object
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayUpdateRequest:
+    properties:
+      dnsServer:
+        type: string
+      domain:
+        type: string
+      ipAddress:
+        type: string
+      name:
+        type: string
+      port:
+        type: integer
+    type: object
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayUpdateUserRequest:
+    properties:
+      userUuids:
+        items:
+          type: string
+        type: array
+    required:
+    - userUuids
+    type: object
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayUserResponse:
+    properties:
+      domain:
+        type: string
+      ipAddress:
+        type: string
+      name:
+        type: string
+      port:
+        type: integer
+      serverPublicKey:
+        type: string
+      uuid:
+        type: string
+    type: object
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGClientConfig:
+    properties:
+      clientInterfaceConfig:
+        $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGClientInterfaceConfig'
+      clientPeerConfig:
+        $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGClientPeerConfig'
+      clientUuid:
+        type: string
+      expiryTime:
+        type: string
+    type: object
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGClientInterfaceConfig:
+    properties:
+      dnsServer:
+        type: string
+      ipAddress:
+        type: string
+      privateKey:
+        type: string
+    type: object
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGClientPeerConfig:
+    properties:
+      allowedIPs:
+        items:
+          type: string
+        type: array
+      persistantAlive:
+        type: integer
+      presharedKey:
+        type: string
+      publicKey:
+        type: string
+      vpnGatewayDomain:
+        type: string
+      vpnGatewayIP:
+        type: string
+      vpnGatewayPort:
+        type: integer
+    type: object
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGServerConfig:
+    properties:
+      wgServerInterfaceConfig:
+        $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGServerInterfaceConfig'
+      wgServerPeerConfigs:
+        items:
+          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGServerPeerConfig'
+        type: array
+    type: object
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGServerInterfaceConfig:
+    properties:
+      dnsServer:
+        type: string
+      ipAddress:
+        type: string
+      listenPort:
+        type: integer
+      postDown:
+        type: string
+      postUp:
+        type: string
+      privateKey:
+        type: string
+      publicKey:
+        type: string
+      vpnGatewayUuid:
+        type: string
+    type: object
+  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGServerPeerConfig:
+    properties:
+      clientAllowedIPs:
+        type: string
+      clientPublicKey:
+        type: string
+      presharedKey:
+        type: string
+    type: object
+  gorm.DeletedAt:
+    properties:
+      time:
+        type: string
+      valid:
+        description: Valid is true if Time is not NULL
+        type: boolean
+    type: object
+info:
+  contact:
+    email: hello@leetsecure.com
+    name: Leetsecure Support
+    url: leetsecure.com
+  description: This is a Qryptic Controller Service to manage the users, groups, gateways
+    and clients.
+  title: Qryptic Controller API
+  version: "1.0"
+paths:
+  /api/v1/admin/access/gateway/{id}/{action}/groups:
+    put:
+      consumes:
+      - application/json
+      description: AddRemoveGroupsInGateway
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: gateway id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: action
+        in: path
+        name: action
+        required: true
+        type: string
+      - description: group ids
+        in: body
+        name: GatewayUpdateGroupRequest
+        required: true
+        schema:
+          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.GatewayUpdateGroupRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: AddRemoveGroupsInGateway
+      tags:
+      - admin-access
+  /api/v1/admin/access/gateway/{id}/{action}/users:
+    put:
+      consumes:
+      - application/json
+      description: AddRemoveUsersInGateway
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: gateway id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: action
+        in: path
+        name: action
+        required: true
+        type: string
+      - description: user ids
+        in: body
+        name: VpnGatewayUpdateUserRequest
+        required: true
+        schema:
+          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayUpdateUserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: AddRemoveUsersInGateway
+      tags:
+      - admin-access
+  /api/v1/admin/access/group/{id}/gateways:
+    get:
+      consumes:
+      - application/json
+      description: ListGatewaysAccessibleByGroup
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: group id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: action
+        in: path
+        name: action
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayUserResponse'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: ListGatewaysAccessibleByGroup
+      tags:
+      - admin-access
+  /api/v1/admin/access/user/{id}/gateways:
+    get:
+      consumes:
+      - application/json
+      description: ListGatewaysAccessibleByUser
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: user id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: action
+        in: path
+        name: action
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayUserResponse'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: ListGatewaysAccessibleByUser
+      tags:
+      - admin-access
+  /api/v1/admin/client/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: DeleteVpnClient
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: client id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: DeleteVpnClient
+      tags:
+      - admin-client
+  /api/v1/admin/client/expired:
+    delete:
+      consumes:
+      - application/json
+      description: DeleteExpiredClients
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: DeleteExpiredClients
+      tags:
+      - admin-client
+  /api/v1/admin/config:
+    get:
+      consumes:
+      - application/json
+      description: Get Admin Configuration
+      operationId: GetAdminConfiguration
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - collectionFormat: multi
+        description: string collections
+        in: query
+        items:
+          type: string
+        name: include
+        type: array
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: GetAdminConfiguration
+      tags:
+      - admin-config
+  /api/v1/admin/config/password-login:
+    put:
+      consumes:
+      - application/json
+      description: update whether password login should be allowed or not
+      operationId: UpdateAllowPasswordLogin
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: true or false
+        in: body
+        name: UpdateAllowPasswordLoginRequest
+        required: true
+        schema:
+          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UpdateAllowPasswordLoginRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: UpdateAllowPasswordLogin
+      tags:
+      - admin-config
+  /api/v1/admin/config/sso:
+    post:
+      consumes:
+      - application/json
+      description: Add SSO Configuration
+      operationId: AddSsoConfig
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: SSO Config Details
+        in: body
+        name: AddSsoConfigRequest
+        required: true
+        schema:
+          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.AddSsoConfigRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: Add SSO Config
+      tags:
+      - admin-config
+  /api/v1/admin/config/sso-login:
+    put:
+      consumes:
+      - application/json
+      description: update whether sso login should be allowed or not
+      operationId: UpdateAllowSSOLogin
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: true or false
+        in: body
+        name: UpdateAllowSSOLoginRequest
+        required: true
+        schema:
+          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UpdateAllowSSOLoginRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: UpdateAllowSSOLogin
+      tags:
+      - admin-config
+  /api/v1/admin/config/sso/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete sso configuration
+      operationId: DeleteSsoConfig
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: sso id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: DeleteSsoConfig
+      tags:
+      - admin-config
+  /api/v1/admin/gateway:
+    post:
+      consumes:
+      - application/json
+      description: CreateGateway
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Gateway details
+        in: body
+        name: VpnGatewayCreateRequest
+        required: true
+        schema:
+          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayCreateRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: CreateGateway
+      tags:
+      - admin-gateway
+  /api/v1/admin/gateway/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: DeleteGateway
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: gateway id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: DeleteGateway
+      tags:
+      - admin-gateway
+    get:
+      consumes:
+      - application/json
+      description: GetVpnGatewayDetails
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: gateway id
+        in: path
+        name: id
+        required: true
+        type: string
+      - collectionFormat: multi
+        description: string collections
+        in: query
+        items:
+          type: string
+        name: include
+        type: array
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGateway'
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: GetVpnGatewayDetails
+      tags:
+      - admin-gateway
+    put:
+      consumes:
+      - application/json
+      description: UpdateGateway
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Gateway details
+        in: body
+        name: VpnGatewayUpdateRequest
+        required: true
+        schema:
+          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayUpdateRequest'
+      - description: gateway id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: UpdateGateway
+      tags:
+      - admin-gateway
+  /api/v1/admin/gateway/{id}/deployment-config:
+    get:
+      consumes:
+      - application/json
+      description: GetVpnGatewayDeploymentConfig
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: gateway id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: GetVpnGatewayDeploymentConfig
+      tags:
+      - admin-gateway
+  /api/v1/admin/gateway/{id}/reset:
+    delete:
+      consumes:
+      - application/json
+      description: Clear Gateway Clients And IPPool
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: gateway id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: Reset Gateway
+      tags:
+      - admin-gateway
+  /api/v1/admin/gateway/list:
+    get:
+      consumes:
+      - application/json
+      description: list all the gateways
+      operationId: list-gateways
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - collectionFormat: multi
+        description: string collections
+        in: query
+        items:
+          type: string
+        name: include
+        type: array
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGateway'
+            type: array
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: List gateways
+      tags:
+      - admin-gateway
+  /api/v1/admin/group:
+    post:
+      description: CreateGroup
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Group details
+        in: body
+        name: GroupCreateRequest
+        required: true
+        schema:
+          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.GroupCreateRequest'
+      responses:
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: CreateGroup
+      tags:
+      - admin-group
+  /api/v1/admin/group/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: DeleteGroup
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: group id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: DeleteGroup
+      tags:
+      - admin-group
+    get:
+      consumes:
+      - application/json
+      description: Get Group By UUID
+      operationId: GetGroup
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - collectionFormat: multi
+        description: string collections
+        in: query
+        items:
+          type: string
+        name: include
+        type: array
+      - description: group id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.Group'
+            type: array
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: Get Group
+      tags:
+      - admin-group
+    put:
+      consumes:
+      - application/json
+      description: UpdateGroup
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Group details
+        in: body
+        name: GroupUpdateRequest
+        required: true
+        schema:
+          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.GroupUpdateRequest'
+      - description: group id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: UpdateGroup
+      tags:
+      - admin-group
+  /api/v1/admin/group/{id}/{action}/users:
+    put:
+      consumes:
+      - application/json
+      description: AddRemoveUsersInGroup
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Provide details
+        in: body
+        name: GroupUpdateUserRequest
+        required: true
+        schema:
+          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.GroupUpdateUserRequest'
+      - description: group id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: action
+        in: path
+        name: action
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: AddRemoveUsersInGroup
+      tags:
+      - admin-group
+  /api/v1/admin/group/list:
+    get:
+      consumes:
+      - application/json
+      description: list all the groups
+      operationId: ListGroups
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - collectionFormat: multi
+        description: string collections
+        in: query
+        items:
+          type: string
+        name: include
+        type: array
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.Group'
+            type: array
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: ListGroups
+      tags:
+      - admin-group
+  /api/v1/admin/user:
+    post:
+      consumes:
+      - application/json
+      description: RegisterUser
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: User details
+        in: body
+        name: RegisterUserRequest
+        required: true
+        schema:
+          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.RegisterUserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: RegisterUser
+      tags:
+      - admin-user
+  /api/v1/admin/user/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: DeleteUser
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: user id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: DeleteUser
+      tags:
+      - admin-user
+    get:
+      consumes:
+      - application/json
+      description: GetUserDetails
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - collectionFormat: multi
+        description: string collections
+        in: query
+        items:
+          type: string
+        name: include
+        type: array
+      - description: user id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.User'
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: GetUserDetails
+      tags:
+      - admin-user
+    put:
+      consumes:
+      - application/json
+      description: UpdateUser
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: User details
+        in: body
+        name: UpdateUserRequest
+        required: true
+        schema:
+          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UpdateUserRequest'
+      - description: user id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: UpdateUser
+      tags:
+      - admin-user
+  /api/v1/admin/user/list:
+    get:
+      consumes:
+      - application/json
+      description: ListUsers
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - collectionFormat: multi
+        description: string collections
+        in: query
+        items:
+          type: string
+        name: include
+        type: array
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.User'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: ListUsers
+      tags:
+      - admin-user
+  /api/v1/auth/{provider}/sso/callback:
+    get:
+      consumes:
+      - application/json
+      description: UserAuthSSOCallback
+      operationId: UserAuthSSOCallback
+      parameters:
+      - description: provider
+        in: path
+        name: provider
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: UserAuthSSOCallback
+      tags:
+      - public
+  /api/v1/auth/{provider}/sso/initiate:
+    get:
+      consumes:
+      - application/json
+      description: InitiateSSOAuth
+      operationId: InitiateSSOAuth
+      parameters:
+      - description: provider
+        in: path
+        name: provider
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: InitiateSSOAuth
+      tags:
+      - public
+  /api/v1/auth/{provider}/sso/token:
+    get:
+      consumes:
+      - application/json
+      description: UserAuthVerifySSOToken
+      operationId: UserAuthVerifySSOToken
+      parameters:
+      - description: provider
+        in: path
+        name: provider
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: UserAuthVerifySSOToken
+      tags:
+      - public
+  /api/v1/auth/{provider}/web/sso/initiate:
+    get:
+      consumes:
+      - application/json
+      description: WebGoogleLoginInitiate
+      operationId: WebGoogleLoginInitiate
+      parameters:
+      - description: provider
+        in: path
+        name: provider
+        required: true
+        type: string
+      - description: string
+        in: query
+        name: code_challenge
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: WebGoogleLoginInitiate
+      tags:
+      - public
+  /api/v1/auth/{provider}/web/sso/token:
+    get:
+      consumes:
+      - application/json
+      description: WebGoogleLoginToken
+      operationId: WebGoogleLoginToken
+      parameters:
+      - description: provider
+        in: path
+        name: provider
+        required: true
+        type: string
+      - description: string
+        in: query
+        name: code_verifier
+        required: true
+        type: string
+      - description: string
+        in: query
+        name: code_challenge
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: WebGoogleLoginToken
+      tags:
+      - public
+  /api/v1/auth/login:
+    post:
+      consumes:
+      - application/json
+      description: get auth token for given username and password
+      operationId: auth-for-user-and-admin
+      parameters:
+      - description: Insert your email and password
+        in: body
+        name: UserLoginRequest
+        required: true
+        schema:
+          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UserLoginRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: Auth for User and Admin
+      tags:
+      - public
+  /api/v1/client/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: DeleteVpnClient
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: client id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: DeleteVpnClient
+      tags:
+      - user
+  /api/v1/gateway/{id}/client:
+    get:
+      consumes:
+      - application/json
+      description: GetVpnClientConfig
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: gateway id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGClientConfig'
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: GetVpnClientConfig
+      tags:
+      - user
+  /api/v1/gateway/{id}/health:
+    get:
+      consumes:
+      - application/json
+      description: get health of the gateway by vpnGatewayUuid
+      operationId: gateway-health-check
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: gateway id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "404":
+          description: Not Found
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: Gateway Health Check
+      tags:
+      - user
+  /api/v1/gateway/get-gateway-config:
+    get:
+      consumes:
+      - application/json
+      description: GetVpnGatewayWGConfigByGW
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGServerConfig'
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: GetVpnGatewayWGConfigByGW
+      tags:
+      - gateway
+  /api/v1/gateway/list:
+    get:
+      consumes:
+      - application/json
+      description: GetVpnGatewaysAccessibleByUser
+      parameters:
+      - default: Bearer <token>
+        description: Insert your token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayUserResponse'
+            type: array
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: GetVpnGatewaysAccessibleByUser
+      tags:
+      - user
+  /api/v1/health:
+    get:
+      consumes:
+      - application/json
+      description: get health of the controller
+      operationId: controller-health-check
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+      summary: Controller Health Check
+      tags:
+      - public
+  /api/v1/sso-config:
+    get:
+      consumes:
+      - application/json
+      description: get-client-ids-of-sso-allowed
+      operationId: sso-configs
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: object
+      summary: SSO Configs
+      tags:
+      - public
+swagger: "2.0"
