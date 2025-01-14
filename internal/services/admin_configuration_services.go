@@ -190,8 +190,9 @@ func UpdateAllowSSOLogin(updatedValue bool) error {
 }
 
 func AddSsoConfig(domain, provider, clientId, clientSecret, platform string) error {
-	var adminConfiguration models.AdminConfiguration
-	if err := database.DB.First(&adminConfiguration).Error; err != nil {
+
+	adminConfiguration, err := GetAdminConfiguration(true)
+	if err != nil {
 		return err
 	}
 	var ssoConfig models.SSOConfig
@@ -203,7 +204,7 @@ func AddSsoConfig(domain, provider, clientId, clientSecret, platform string) err
 	ssoConfig.ClientSecret = clientSecret
 
 	adminConfiguration.SSOConfigs = append(adminConfiguration.SSOConfigs, &ssoConfig)
-	err := database.DB.Save(&adminConfiguration).Error
+	err = database.DB.Save(&adminConfiguration).Error
 	if err != nil {
 		return err
 	}
