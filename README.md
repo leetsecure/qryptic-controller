@@ -13,7 +13,7 @@ The **Qryptic Controller** is the central management hub for your Zero Trust Net
 2. Access the Controller UI at `https://<controller-domain>`.
 3. Log in using the randomly generated admin credentials (check in logs).
 
-For detailed setup and configuration instructions, visit the [Qryptic Controller Documentation](https://docs.qryptic.com/).
+For detailed setup and configuration instructions, visit the [Qryptic Controller Documentation](https://docs.qryptic.app/).
 
 ---
 
