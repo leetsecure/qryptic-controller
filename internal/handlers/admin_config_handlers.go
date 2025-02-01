@@ -60,7 +60,7 @@ func DeleteSsoConfig(c *gin.Context) {
 	// 	c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 	// 	return
 	// }
-	ssoConfigUuid := c.Param("uuid")
+	ssoConfigUuid := c.Param("id")
 	err := services.DeleteSsoConfig(ssoConfigUuid)
 
 	if err != nil {

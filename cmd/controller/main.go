@@ -55,10 +55,11 @@ func main() {
 
 	router.Use(cors.New(cors.Config{
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
-		AllowHeaders:     []string{"Origin", "Content-Length", "Content-Type", "Authorization"},
-		AllowCredentials: true,
-		MaxAge:           12 * time.Hour,
-		AllowAllOrigins:  true,
+		AllowHeaders:     []string{"Accept", "Origin", "Content-Length", "Content-Type", "Authorization", "X-Requested-With"},
+		ExposeHeaders:    []string{"Content-Length"},
+		AllowCredentials: config.CORSAllowCredentials,
+		MaxAge:           1 * time.Hour,
+		AllowOrigins:     config.CORSAllowedOrigins,
 	}))
 
 	routes.SetupControllerRoutes(router)
@@ -72,7 +73,6 @@ func main() {
 		}
 
 		// Setup the routes in the router
-
 		router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	}
 
