@@ -2673,6 +2673,9 @@ const docTemplate = `{
                 "email": {
                     "type": "string"
                 },
+                "isPasswordSet": {
+                    "type": "boolean"
+                },
                 "newPassword": {
                     "type": "string"
                 },

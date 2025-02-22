@@ -65,7 +65,7 @@ func DeleteUser(userUuid string) error {
 	return nil
 }
 
-func UpdateUser(userUuid, emailID, newPassword, role string) error {
+func UpdateUser(userUuid, emailID, newPassword, role string, isPasswordSet bool) error {
 	log := logger.Default()
 	var user models.User
 	user, exists, err := getUserFromUuid(userUuid)
@@ -76,12 +76,14 @@ func UpdateUser(userUuid, emailID, newPassword, role string) error {
 		return errors.New("user with given uuid not present")
 	}
 
-	if newPassword != "" {
+	if isPasswordSet {
 		passwordHash, err := auth.CreatePasswordHash(newPassword)
 		if err != nil {
 			return err
 		}
 		user.PasswordHash = passwordHash
+	} else {
+		user.IsPasswordSet = false
 	}
 
 	if role != "" {

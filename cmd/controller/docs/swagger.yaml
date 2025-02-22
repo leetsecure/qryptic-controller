@@ -163,6 +163,8 @@ definitions:
     properties:
       email:
         type: string
+      isPasswordSet:
+        type: boolean
       newPassword:
         type: string
       role:

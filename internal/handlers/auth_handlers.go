@@ -30,6 +30,13 @@ func UserAdminLogin(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
+
+	passwd := userLoginRequest.Password
+	if len(passwd) == 0 || len(passwd) > 50 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "incorrect password"})
+		return
+	}
+
 	token, err := services.UserLogin(userLoginRequest.EmailId, userLoginRequest.Password)
 	if err != nil {
 		c.JSON(http.StatusUnauthorized, gin.H{"error": err.Error()})

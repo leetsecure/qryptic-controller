@@ -32,7 +32,19 @@ func RegisterUser(c *gin.Context) {
 		return
 	}
 
-	err := services.RegisterUser(registerUserRequest.EmailId, registerUserRequest.Password, string(registerUserRequest.Role), *registerUserRequest.IsPasswordSet)
+	passwd := registerUserRequest.Password
+	isPasswordSet := *(registerUserRequest.IsPasswordSet)
+	if isPasswordSet && (len(passwd) < 8 || len(passwd) > 50) {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "password length should be between 8 and 50"})
+		return
+	}
+
+	if !isPasswordSet && len(passwd) != 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "password found in request even if isPasswordSet is false"})
+		return
+	}
+
+	err := services.RegisterUser(registerUserRequest.EmailId, registerUserRequest.Password, string(registerUserRequest.Role), isPasswordSet)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
@@ -95,7 +107,19 @@ func UpdateUser(c *gin.Context) {
 
 	userUuid := c.Param("id")
 
-	err := services.UpdateUser(userUuid, updateUserRequest.EmailId, updateUserRequest.NewPassword, string(updateUserRequest.Role))
+	passwd := updateUserRequest.NewPassword
+	isPasswordSet := *(updateUserRequest.IsPasswordSet)
+	if isPasswordSet && (len(passwd) < 8 || len(passwd) > 50) {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "password length should be between 8 and 50"})
+		return
+	}
+
+	if !isPasswordSet && len(passwd) != 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "password found in request even if isPasswordSet is false"})
+		return
+	}
+
+	err := services.UpdateUser(userUuid, updateUserRequest.EmailId, updateUserRequest.NewPassword, string(updateUserRequest.Role), isPasswordSet)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return

@@ -8,9 +8,10 @@ type RegisterUserRequest struct {
 }
 
 type UpdateUserRequest struct {
-	EmailId     string       `json:"email" `
-	NewPassword string       `json:"newPassword"`
-	Role        UserRoleEnum `json:"role"`
+	EmailId       string       `json:"email" `
+	NewPassword   string       `json:"newPassword"`
+	Role          UserRoleEnum `json:"role"`
+	IsPasswordSet *bool        `json:"isPasswordSet"`
 }
 
 type VpnGatewayPeerConfig struct {
