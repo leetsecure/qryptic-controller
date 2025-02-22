@@ -61,7 +61,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.GatewayUpdateGroupRequest"
+                            "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.GatewayUpdateGroupRequest"
                         }
                     }
                 ],
@@ -135,7 +135,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayUpdateUserRequest"
+                            "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.VpnGatewayUpdateUserRequest"
                         }
                     }
                 ],
@@ -210,7 +210,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayUserResponse"
+                                "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.VpnGatewayUserResponse"
                             }
                         }
                     },
@@ -278,7 +278,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayUserResponse"
+                                "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.VpnGatewayUserResponse"
                             }
                         }
                     },
@@ -497,7 +497,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UpdateAllowPasswordLoginRequest"
+                            "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.UpdateAllowPasswordLoginRequest"
                         }
                     }
                 ],
@@ -552,7 +552,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.AddSsoConfigRequest"
+                            "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.AddSsoConfigRequest"
                         }
                     }
                 ],
@@ -607,7 +607,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UpdateAllowSSOLoginRequest"
+                            "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.UpdateAllowSSOLoginRequest"
                         }
                     }
                 ],
@@ -714,7 +714,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayCreateRequest"
+                            "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.VpnGatewayCreateRequest"
                         }
                     }
                 ],
@@ -786,7 +786,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGateway"
+                                "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.VpnGateway"
                             }
                         }
                     },
@@ -849,7 +849,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGateway"
+                            "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.VpnGateway"
                         }
                     },
                     "400": {
@@ -899,7 +899,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayUpdateRequest"
+                            "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.VpnGatewayUpdateRequest"
                         }
                     },
                     {
@@ -1132,7 +1132,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.GroupCreateRequest"
+                            "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.GroupCreateRequest"
                         }
                     }
                 ],
@@ -1198,7 +1198,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.Group"
+                                "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.Group"
                             }
                         }
                     },
@@ -1264,7 +1264,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.Group"
+                                "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.Group"
                             }
                         }
                     },
@@ -1309,7 +1309,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.GroupUpdateRequest"
+                            "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.GroupUpdateRequest"
                         }
                     },
                     {
@@ -1432,7 +1432,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.GroupUpdateUserRequest"
+                            "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.GroupUpdateUserRequest"
                         }
                     },
                     {
@@ -1506,7 +1506,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.RegisterUserRequest"
+                            "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.RegisterUserRequest"
                         }
                     }
                 ],
@@ -1577,7 +1577,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.User"
+                                "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.User"
                             }
                         }
                     },
@@ -1646,7 +1646,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.User"
+                            "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.User"
                         }
                     },
                     "400": {
@@ -1696,7 +1696,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UpdateUserRequest"
+                            "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.UpdateUserRequest"
                         }
                     },
                     {
@@ -1812,7 +1812,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UserLoginRequest"
+                            "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.UserLoginRequest"
                         }
                     }
                 ],
@@ -2169,7 +2169,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGServerConfig"
+                            "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.WGServerConfig"
                         }
                     },
                     "400": {
@@ -2222,7 +2222,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayUserResponse"
+                                "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.VpnGatewayUserResponse"
                             }
                         }
                     },
@@ -2275,7 +2275,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGClientConfig"
+                            "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.WGClientConfig"
                         }
                     },
                     "400": {
@@ -2426,7 +2426,7 @@ const docTemplate = `{
         }
     },
     "definitions": {
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.AddSsoConfigRequest": {
+        "github_com_leetsecure_qryptic-controller_internal_models.AddSsoConfigRequest": {
             "type": "object",
             "required": [
                 "clientID",
@@ -2453,7 +2453,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.Client": {
+        "github_com_leetsecure_qryptic-controller_internal_models.Client": {
             "type": "object",
             "properties": {
                 "allocatedIP": {
@@ -2493,7 +2493,7 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "user": {
-                    "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.User"
+                    "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.User"
                 },
                 "userId": {
                     "type": "integer"
@@ -2502,14 +2502,14 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "vpnGateway": {
-                    "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGateway"
+                    "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.VpnGateway"
                 },
                 "vpnGatewayId": {
                     "type": "integer"
                 }
             }
         },
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.GatewayUpdateGroupRequest": {
+        "github_com_leetsecure_qryptic-controller_internal_models.GatewayUpdateGroupRequest": {
             "type": "object",
             "required": [
                 "groupUuids"
@@ -2523,7 +2523,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.Group": {
+        "github_com_leetsecure_qryptic-controller_internal_models.Group": {
             "type": "object",
             "properties": {
                 "createdAt": {
@@ -2544,7 +2544,7 @@ const docTemplate = `{
                 "users": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.User"
+                        "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.User"
                     }
                 },
                 "uuid": {
@@ -2553,12 +2553,12 @@ const docTemplate = `{
                 "vpnGateways": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGateway"
+                        "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.VpnGateway"
                     }
                 }
             }
         },
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.GroupCreateRequest": {
+        "github_com_leetsecure_qryptic-controller_internal_models.GroupCreateRequest": {
             "type": "object",
             "required": [
                 "name"
@@ -2569,7 +2569,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.GroupUpdateRequest": {
+        "github_com_leetsecure_qryptic-controller_internal_models.GroupUpdateRequest": {
             "type": "object",
             "required": [
                 "name"
@@ -2580,7 +2580,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.GroupUpdateUserRequest": {
+        "github_com_leetsecure_qryptic-controller_internal_models.GroupUpdateUserRequest": {
             "type": "object",
             "required": [
                 "userUuids"
@@ -2594,7 +2594,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.IPPool": {
+        "github_com_leetsecure_qryptic-controller_internal_models.IPPool": {
             "type": "object",
             "properties": {
                 "assigned": {
@@ -2624,7 +2624,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.RegisterUserRequest": {
+        "github_com_leetsecure_qryptic-controller_internal_models.RegisterUserRequest": {
             "type": "object",
             "required": [
                 "email",
@@ -2641,11 +2641,11 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "role": {
-                    "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UserRoleEnum"
+                    "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.UserRoleEnum"
                 }
             }
         },
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UpdateAllowPasswordLoginRequest": {
+        "github_com_leetsecure_qryptic-controller_internal_models.UpdateAllowPasswordLoginRequest": {
             "type": "object",
             "required": [
                 "allowPasswordLogin"
@@ -2656,7 +2656,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UpdateAllowSSOLoginRequest": {
+        "github_com_leetsecure_qryptic-controller_internal_models.UpdateAllowSSOLoginRequest": {
             "type": "object",
             "required": [
                 "allowSsoLogin"
@@ -2667,7 +2667,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UpdateUserRequest": {
+        "github_com_leetsecure_qryptic-controller_internal_models.UpdateUserRequest": {
             "type": "object",
             "properties": {
                 "email": {
@@ -2677,17 +2677,17 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "role": {
-                    "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UserRoleEnum"
+                    "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.UserRoleEnum"
                 }
             }
         },
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.User": {
+        "github_com_leetsecure_qryptic-controller_internal_models.User": {
             "type": "object",
             "properties": {
                 "clients": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.Client"
+                        "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.Client"
                     }
                 },
                 "createdAt": {
@@ -2702,7 +2702,7 @@ const docTemplate = `{
                 "groups": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.Group"
+                        "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.Group"
                     }
                 },
                 "id": {
@@ -2715,7 +2715,7 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "role": {
-                    "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UserRoleEnum"
+                    "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.UserRoleEnum"
                 },
                 "updatedAt": {
                     "type": "string"
@@ -2726,12 +2726,12 @@ const docTemplate = `{
                 "vpnGateways": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGateway"
+                        "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.VpnGateway"
                     }
                 }
             }
         },
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UserLoginRequest": {
+        "github_com_leetsecure_qryptic-controller_internal_models.UserLoginRequest": {
             "type": "object",
             "required": [
                 "email",
@@ -2746,7 +2746,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UserRoleEnum": {
+        "github_com_leetsecure_qryptic-controller_internal_models.UserRoleEnum": {
             "type": "string",
             "enum": [
                 "Default",
@@ -2759,13 +2759,13 @@ const docTemplate = `{
                 "UserRole"
             ]
         },
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGateway": {
+        "github_com_leetsecure_qryptic-controller_internal_models.VpnGateway": {
             "type": "object",
             "properties": {
                 "clients": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.Client"
+                        "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.Client"
                     }
                 },
                 "createdAt": {
@@ -2783,7 +2783,7 @@ const docTemplate = `{
                 "groups": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.Group"
+                        "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.Group"
                     }
                 },
                 "id": {
@@ -2796,7 +2796,7 @@ const docTemplate = `{
                     "description": "IPAllocations    []*IPAllocation ` + "`" + `json:\"ipAllocations\"` + "`" + `",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.IPPool"
+                        "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.IPPool"
                     }
                 },
                 "jwtAlgorithm": {
@@ -2823,7 +2823,7 @@ const docTemplate = `{
                 "users": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.User"
+                        "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.User"
                     }
                 },
                 "uuid": {
@@ -2834,7 +2834,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayCreateRequest": {
+        "github_com_leetsecure_qryptic-controller_internal_models.VpnGatewayCreateRequest": {
             "type": "object",
             "required": [
                 "dnsServer",
@@ -2864,7 +2864,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayUpdateRequest": {
+        "github_com_leetsecure_qryptic-controller_internal_models.VpnGatewayUpdateRequest": {
             "type": "object",
             "properties": {
                 "dnsServer": {
@@ -2884,7 +2884,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayUpdateUserRequest": {
+        "github_com_leetsecure_qryptic-controller_internal_models.VpnGatewayUpdateUserRequest": {
             "type": "object",
             "required": [
                 "userUuids"
@@ -2898,7 +2898,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayUserResponse": {
+        "github_com_leetsecure_qryptic-controller_internal_models.VpnGatewayUserResponse": {
             "type": "object",
             "properties": {
                 "domain": {
@@ -2921,14 +2921,14 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGClientConfig": {
+        "github_com_leetsecure_qryptic-controller_internal_models.WGClientConfig": {
             "type": "object",
             "properties": {
                 "clientInterfaceConfig": {
-                    "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGClientInterfaceConfig"
+                    "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.WGClientInterfaceConfig"
                 },
                 "clientPeerConfig": {
-                    "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGClientPeerConfig"
+                    "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.WGClientPeerConfig"
                 },
                 "clientUuid": {
                     "type": "string"
@@ -2938,7 +2938,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGClientInterfaceConfig": {
+        "github_com_leetsecure_qryptic-controller_internal_models.WGClientInterfaceConfig": {
             "type": "object",
             "properties": {
                 "dnsServer": {
@@ -2952,7 +2952,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGClientPeerConfig": {
+        "github_com_leetsecure_qryptic-controller_internal_models.WGClientPeerConfig": {
             "type": "object",
             "properties": {
                 "allowedIPs": {
@@ -2981,21 +2981,21 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGServerConfig": {
+        "github_com_leetsecure_qryptic-controller_internal_models.WGServerConfig": {
             "type": "object",
             "properties": {
                 "wgServerInterfaceConfig": {
-                    "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGServerInterfaceConfig"
+                    "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.WGServerInterfaceConfig"
                 },
                 "wgServerPeerConfigs": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGServerPeerConfig"
+                        "$ref": "#/definitions/github_com_leetsecure_qryptic-controller_internal_models.WGServerPeerConfig"
                     }
                 }
             }
         },
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGServerInterfaceConfig": {
+        "github_com_leetsecure_qryptic-controller_internal_models.WGServerInterfaceConfig": {
             "type": "object",
             "properties": {
                 "dnsServer": {
@@ -3024,7 +3024,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGServerPeerConfig": {
+        "github_com_leetsecure_qryptic-controller_internal_models.WGServerPeerConfig": {
             "type": "object",
             "properties": {
                 "clientAllowedIPs": {

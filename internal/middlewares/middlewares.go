@@ -67,6 +67,7 @@ func VpnGatewayAuthCheckMiddleware(c *gin.Context) {
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		c.Abort()
+		return
 	}
 	jwtSecret := vpnGateway.JwtSecretKey
 	_, err = auth.VerifyVpnGatewayAuthToken(token, jwtSecret)

@@ -1,6 +1,6 @@
 basePath: /
 definitions:
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.AddSsoConfigRequest:
+  github_com_leetsecure_qryptic-controller_internal_models.AddSsoConfigRequest:
     properties:
       clientID:
         type: string
@@ -19,7 +19,7 @@ definitions:
     - platform
     - provider
     type: object
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.Client:
+  github_com_leetsecure_qryptic-controller_internal_models.Client:
     properties:
       allocatedIP:
         type: string
@@ -46,17 +46,17 @@ definitions:
       updatedAt:
         type: string
       user:
-        $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.User'
+        $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.User'
       userId:
         type: integer
       uuid:
         type: string
       vpnGateway:
-        $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGateway'
+        $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.VpnGateway'
       vpnGatewayId:
         type: integer
     type: object
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.GatewayUpdateGroupRequest:
+  github_com_leetsecure_qryptic-controller_internal_models.GatewayUpdateGroupRequest:
     properties:
       groupUuids:
         items:
@@ -65,7 +65,7 @@ definitions:
     required:
     - groupUuids
     type: object
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.Group:
+  github_com_leetsecure_qryptic-controller_internal_models.Group:
     properties:
       createdAt:
         type: string
@@ -79,30 +79,30 @@ definitions:
         type: string
       users:
         items:
-          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.User'
+          $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.User'
         type: array
       uuid:
         type: string
       vpnGateways:
         items:
-          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGateway'
+          $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.VpnGateway'
         type: array
     type: object
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.GroupCreateRequest:
+  github_com_leetsecure_qryptic-controller_internal_models.GroupCreateRequest:
     properties:
       name:
         type: string
     required:
     - name
     type: object
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.GroupUpdateRequest:
+  github_com_leetsecure_qryptic-controller_internal_models.GroupUpdateRequest:
     properties:
       name:
         type: string
     required:
     - name
     type: object
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.GroupUpdateUserRequest:
+  github_com_leetsecure_qryptic-controller_internal_models.GroupUpdateUserRequest:
     properties:
       userUuids:
         items:
@@ -111,7 +111,7 @@ definitions:
     required:
     - userUuids
     type: object
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.IPPool:
+  github_com_leetsecure_qryptic-controller_internal_models.IPPool:
     properties:
       assigned:
         type: boolean
@@ -131,7 +131,7 @@ definitions:
         description: Foreign key to VpnGateway
         type: integer
     type: object
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.RegisterUserRequest:
+  github_com_leetsecure_qryptic-controller_internal_models.RegisterUserRequest:
     properties:
       email:
         type: string
@@ -140,39 +140,39 @@ definitions:
       password:
         type: string
       role:
-        $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UserRoleEnum'
+        $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.UserRoleEnum'
     required:
     - email
     - role
     type: object
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UpdateAllowPasswordLoginRequest:
+  github_com_leetsecure_qryptic-controller_internal_models.UpdateAllowPasswordLoginRequest:
     properties:
       allowPasswordLogin:
         type: boolean
     required:
     - allowPasswordLogin
     type: object
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UpdateAllowSSOLoginRequest:
+  github_com_leetsecure_qryptic-controller_internal_models.UpdateAllowSSOLoginRequest:
     properties:
       allowSsoLogin:
         type: boolean
     required:
     - allowSsoLogin
     type: object
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UpdateUserRequest:
+  github_com_leetsecure_qryptic-controller_internal_models.UpdateUserRequest:
     properties:
       email:
         type: string
       newPassword:
         type: string
       role:
-        $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UserRoleEnum'
+        $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.UserRoleEnum'
     type: object
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.User:
+  github_com_leetsecure_qryptic-controller_internal_models.User:
     properties:
       clients:
         items:
-          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.Client'
+          $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.Client'
         type: array
       createdAt:
         type: string
@@ -182,7 +182,7 @@ definitions:
         type: string
       groups:
         items:
-          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.Group'
+          $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.Group'
         type: array
       id:
         type: integer
@@ -191,17 +191,17 @@ definitions:
       name:
         type: string
       role:
-        $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UserRoleEnum'
+        $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.UserRoleEnum'
       updatedAt:
         type: string
       uuid:
         type: string
       vpnGateways:
         items:
-          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGateway'
+          $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.VpnGateway'
         type: array
     type: object
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UserLoginRequest:
+  github_com_leetsecure_qryptic-controller_internal_models.UserLoginRequest:
     properties:
       email:
         type: string
@@ -211,7 +211,7 @@ definitions:
     - email
     - password
     type: object
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UserRoleEnum:
+  github_com_leetsecure_qryptic-controller_internal_models.UserRoleEnum:
     enum:
     - Default
     - Admin
@@ -221,11 +221,11 @@ definitions:
     - DefaultRole
     - AdminRole
     - UserRole
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGateway:
+  github_com_leetsecure_qryptic-controller_internal_models.VpnGateway:
     properties:
       clients:
         items:
-          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.Client'
+          $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.Client'
         type: array
       createdAt:
         type: string
@@ -237,7 +237,7 @@ definitions:
         type: string
       groups:
         items:
-          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.Group'
+          $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.Group'
         type: array
       id:
         type: integer
@@ -246,7 +246,7 @@ definitions:
       ipPool:
         description: IPAllocations    []*IPAllocation `json:"ipAllocations"`
         items:
-          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.IPPool'
+          $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.IPPool'
         type: array
       jwtAlgorithm:
         type: string
@@ -264,14 +264,14 @@ definitions:
         type: string
       users:
         items:
-          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.User'
+          $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.User'
         type: array
       uuid:
         type: string
       vpnCIDR:
         type: string
     type: object
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayCreateRequest:
+  github_com_leetsecure_qryptic-controller_internal_models.VpnGatewayCreateRequest:
     properties:
       dnsServer:
         type: string
@@ -292,7 +292,7 @@ definitions:
     - name
     - port
     type: object
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayUpdateRequest:
+  github_com_leetsecure_qryptic-controller_internal_models.VpnGatewayUpdateRequest:
     properties:
       dnsServer:
         type: string
@@ -305,7 +305,7 @@ definitions:
       port:
         type: integer
     type: object
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayUpdateUserRequest:
+  github_com_leetsecure_qryptic-controller_internal_models.VpnGatewayUpdateUserRequest:
     properties:
       userUuids:
         items:
@@ -314,7 +314,7 @@ definitions:
     required:
     - userUuids
     type: object
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayUserResponse:
+  github_com_leetsecure_qryptic-controller_internal_models.VpnGatewayUserResponse:
     properties:
       domain:
         type: string
@@ -329,18 +329,18 @@ definitions:
       uuid:
         type: string
     type: object
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGClientConfig:
+  github_com_leetsecure_qryptic-controller_internal_models.WGClientConfig:
     properties:
       clientInterfaceConfig:
-        $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGClientInterfaceConfig'
+        $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.WGClientInterfaceConfig'
       clientPeerConfig:
-        $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGClientPeerConfig'
+        $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.WGClientPeerConfig'
       clientUuid:
         type: string
       expiryTime:
         type: string
     type: object
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGClientInterfaceConfig:
+  github_com_leetsecure_qryptic-controller_internal_models.WGClientInterfaceConfig:
     properties:
       dnsServer:
         type: string
@@ -349,7 +349,7 @@ definitions:
       privateKey:
         type: string
     type: object
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGClientPeerConfig:
+  github_com_leetsecure_qryptic-controller_internal_models.WGClientPeerConfig:
     properties:
       allowedIPs:
         items:
@@ -368,16 +368,16 @@ definitions:
       vpnGatewayPort:
         type: integer
     type: object
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGServerConfig:
+  github_com_leetsecure_qryptic-controller_internal_models.WGServerConfig:
     properties:
       wgServerInterfaceConfig:
-        $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGServerInterfaceConfig'
+        $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.WGServerInterfaceConfig'
       wgServerPeerConfigs:
         items:
-          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGServerPeerConfig'
+          $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.WGServerPeerConfig'
         type: array
     type: object
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGServerInterfaceConfig:
+  github_com_leetsecure_qryptic-controller_internal_models.WGServerInterfaceConfig:
     properties:
       dnsServer:
         type: string
@@ -396,7 +396,7 @@ definitions:
       vpnGatewayUuid:
         type: string
     type: object
-  github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGServerPeerConfig:
+  github_com_leetsecure_qryptic-controller_internal_models.WGServerPeerConfig:
     properties:
       clientAllowedIPs:
         type: string
@@ -450,7 +450,7 @@ paths:
         name: GatewayUpdateGroupRequest
         required: true
         schema:
-          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.GatewayUpdateGroupRequest'
+          $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.GatewayUpdateGroupRequest'
       produces:
       - application/json
       responses:
@@ -500,7 +500,7 @@ paths:
         name: VpnGatewayUpdateUserRequest
         required: true
         schema:
-          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayUpdateUserRequest'
+          $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.VpnGatewayUpdateUserRequest'
       produces:
       - application/json
       responses:
@@ -552,7 +552,7 @@ paths:
           description: OK
           schema:
             items:
-              $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayUserResponse'
+              $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.VpnGatewayUserResponse'
             type: array
         "400":
           description: Bad Request
@@ -598,7 +598,7 @@ paths:
           description: OK
           schema:
             items:
-              $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayUserResponse'
+              $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.VpnGatewayUserResponse'
             type: array
         "400":
           description: Bad Request
@@ -744,7 +744,7 @@ paths:
         name: UpdateAllowPasswordLoginRequest
         required: true
         schema:
-          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UpdateAllowPasswordLoginRequest'
+          $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.UpdateAllowPasswordLoginRequest'
       produces:
       - application/json
       responses:
@@ -781,7 +781,7 @@ paths:
         name: AddSsoConfigRequest
         required: true
         schema:
-          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.AddSsoConfigRequest'
+          $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.AddSsoConfigRequest'
       produces:
       - application/json
       responses:
@@ -818,7 +818,7 @@ paths:
         name: UpdateAllowSSOLoginRequest
         required: true
         schema:
-          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UpdateAllowSSOLoginRequest'
+          $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.UpdateAllowSSOLoginRequest'
       produces:
       - application/json
       responses:
@@ -890,7 +890,7 @@ paths:
         name: VpnGatewayCreateRequest
         required: true
         schema:
-          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayCreateRequest'
+          $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.VpnGatewayCreateRequest'
       produces:
       - application/json
       responses:
@@ -981,7 +981,7 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGateway'
+            $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.VpnGateway'
         "400":
           description: Bad Request
           schema:
@@ -1013,7 +1013,7 @@ paths:
         name: VpnGatewayUpdateRequest
         required: true
         schema:
-          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayUpdateRequest'
+          $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.VpnGatewayUpdateRequest'
       - description: gateway id
         in: path
         name: id
@@ -1146,7 +1146,7 @@ paths:
           description: OK
           schema:
             items:
-              $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGateway'
+              $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.VpnGateway'
             type: array
         "401":
           description: Unauthorized
@@ -1174,7 +1174,7 @@ paths:
         name: GroupCreateRequest
         required: true
         schema:
-          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.GroupCreateRequest'
+          $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.GroupCreateRequest'
       responses:
         "400":
           description: Bad Request
@@ -1261,7 +1261,7 @@ paths:
           description: OK
           schema:
             items:
-              $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.Group'
+              $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.Group'
             type: array
         "401":
           description: Unauthorized
@@ -1290,7 +1290,7 @@ paths:
         name: GroupUpdateRequest
         required: true
         schema:
-          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.GroupUpdateRequest'
+          $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.GroupUpdateRequest'
       - description: group id
         in: path
         name: id
@@ -1335,7 +1335,7 @@ paths:
         name: GroupUpdateUserRequest
         required: true
         schema:
-          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.GroupUpdateUserRequest'
+          $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.GroupUpdateUserRequest'
       - description: group id
         in: path
         name: id
@@ -1395,7 +1395,7 @@ paths:
           description: OK
           schema:
             items:
-              $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.Group'
+              $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.Group'
             type: array
         "401":
           description: Unauthorized
@@ -1425,7 +1425,7 @@ paths:
         name: RegisterUserRequest
         required: true
         schema:
-          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.RegisterUserRequest'
+          $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.RegisterUserRequest'
       produces:
       - application/json
       responses:
@@ -1516,7 +1516,7 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.User'
+            $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.User'
         "400":
           description: Bad Request
           schema:
@@ -1548,7 +1548,7 @@ paths:
         name: UpdateUserRequest
         required: true
         schema:
-          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UpdateUserRequest'
+          $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.UpdateUserRequest'
       - description: user id
         in: path
         name: id
@@ -1602,7 +1602,7 @@ paths:
           description: OK
           schema:
             items:
-              $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.User'
+              $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.User'
             type: array
         "400":
           description: Bad Request
@@ -1796,7 +1796,7 @@ paths:
         name: UserLoginRequest
         required: true
         schema:
-          $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.UserLoginRequest'
+          $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.UserLoginRequest'
       produces:
       - application/json
       responses:
@@ -1877,7 +1877,7 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGClientConfig'
+            $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.WGClientConfig'
         "400":
           description: Bad Request
           schema:
@@ -1955,7 +1955,7 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.WGServerConfig'
+            $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.WGServerConfig'
         "400":
           description: Bad Request
           schema:
@@ -1990,7 +1990,7 @@ paths:
           description: OK
           schema:
             items:
-              $ref: '#/definitions/github_com_leetsecure_kavach-vpn_controller-backend_internal_models.VpnGatewayUserResponse'
+              $ref: '#/definitions/github_com_leetsecure_qryptic-controller_internal_models.VpnGatewayUserResponse'
             type: array
         "401":
           description: Unauthorized
